@@ -2,107 +2,113 @@
 <html lang="en">
 <head>
   <title>Next Play Supplements</title>
-<p class="subtitle">
-  Modern wellness, built for everyday life.<br>
-  The foundation of our healthy lifestyle brands.
-</p>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #071d16;
       color: #f5f1e8;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
     }
 
     .container {
-      width: 100%;
       max-width: 1150px;
-      margin: 0 auto;
+      margin: auto;
       padding: 0 24px;
     }
 
+    /* HEADER */
     .header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(7, 29, 22, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(7,29,22,0.9);
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .header-inner {
-      min-height: 84px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
     }
 
     .logo {
-      height: 64px;
-    }
-
-    .nav {
-      display: flex;
-      gap: 26px;
+      height: 60px;
     }
 
     .nav a {
-      color: #f5f1e8;
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
       font-size: 14px;
-      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
+    /* HERO */
     .hero {
-      padding: 110px 0 90px;
+      padding: 100px 0;
       background: linear-gradient(180deg, #071d16, #0b251c);
     }
 
-    .hero h1 {
-      font-size: 64px;
-      margin-bottom: 20px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
     }
 
-    .hero-buttons {
-      margin-top: 30px;
+    .hero h1 {
+      font-size: 56px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      opacity: 0.75;
+      max-width: 500px;
+      margin-bottom: 25px;
     }
 
     .button {
-      padding: 14px 24px;
+      padding: 12px 22px;
       border-radius: 30px;
-      font-weight: bold;
       display: inline-block;
       margin-right: 10px;
+      font-weight: bold;
     }
 
-    .button-primary {
+    .primary {
       background: #f5f1e8;
       color: #071d16;
     }
 
-    .button-secondary {
+    .secondary {
       border: 1px solid white;
       color: white;
     }
 
+    /* CARD */
+    .card {
+      background: rgba(255,255,255,0.05);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .card small {
+      letter-spacing: 2px;
+      color: #d7b14a;
+    }
+
+    .card h2 {
+      margin-top: 10px;
+    }
+
+    /* SECTIONS */
     .section {
-      padding: 90px 0;
+      padding: 80px 0;
     }
 
     .section-dark {
@@ -113,43 +119,44 @@
       background: #102b21;
     }
 
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .section-header h2 {
-      font-size: 42px;
-    }
-
     .brand-card {
-      max-width: 900px;
-      margin: 0 auto;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
       background: rgba(255,255,255,0.05);
       padding: 40px;
       border-radius: 20px;
-      text-align: center;
     }
 
-    .about-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
+    .about {
+      max-width: 800px;
+      margin: auto;
       background: rgba(255,255,255,0.04);
       padding: 40px;
       border-radius: 20px;
     }
 
-    .about-wrapper p {
+    .about p {
       margin-bottom: 20px;
-      font-size: 18px;
+      font-size: 17px;
+      line-height: 1.7;
     }
 
     .footer {
-      padding: 30px;
       text-align: center;
-      font-size: 14px;
+      padding: 30px;
       opacity: 0.6;
       background: #06140f;
+    }
+
+    @media(max-width: 768px){
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
     }
   </style>
 </head>
@@ -158,60 +165,76 @@
 
 <header class="header">
   <div class="container header-inner">
-    <img src="images/logo.png" alt="Next Play Logo" class="logo">
+    <img src="images/logo.png" class="logo">
 
-    <nav class="nav">
+    <div class="nav">
       <a href="#brand">Auríva</a>
       <a href="#about">About</a>
-    </nav>
+    </div>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>Next Play Supplements</h1>
+  <div class="container hero-grid">
 
-    <div class="hero-buttons">
-      <a class="button button-primary" href="https://aurivacoffee.com" target="_blank">
+    <!-- LEFT -->
+    <div>
+      <h1>Next Play Supplements</h1>
+
+      <p class="subtitle">
+        Modern wellness, built for everyday life.<br>
+        The foundation of our healthy lifestyle brands.
+      </p>
+
+      <a class="button primary" href="https://aurivacoffee.com" target="_blank">
         Explore Auríva
       </a>
 
-      <a class="button button-secondary" href="#about">
+      <a class="button secondary" href="#about">
         Learn More
       </a>
     </div>
-  </div>
-</section>
 
-<section class="section section-dark" id="brand">
-  <div class="container">
-    <div class="section-header">
-      <h2>Our First Brand</h2>
-    </div>
+    <!-- RIGHT CARD -->
+    <div class="card">
+      <small>FEATURED BRAND</small>
 
-    <div class="brand-card">
-      <h3>Auríva Coffee ☕</h3>
+      <h2>Auríva Coffee ☕</h2>
+
       <p>
         Premium functional coffee designed for focus, energy, and balance —
         created to fit beautifully into real daily routines.
       </p>
 
-      <br>
-
-      <a class="button button-primary" href="https://aurivacoffee.com" target="_blank">
-        Visit Auríva Coffee
+      <a class="button primary" href="https://aurivacoffee.com" target="_blank">
+        Visit Auríva
       </a>
     </div>
+
+  </div>
+</section>
+
+<section class="section section-dark" id="brand">
+  <div class="container">
+
+    <div class="brand-card">
+      <h2>Our First Brand</h2>
+
+      <p>
+        Auríva Coffee brings a new perspective to daily energy —
+        combining performance, balance, and ritual in one elevated experience.
+      </p>
+    </div>
+
   </div>
 </section>
 
 <section class="section section-soft" id="about">
   <div class="container">
-    <div class="section-header">
-      <h2>About Us</h2>
-    </div>
 
-    <div class="about-wrapper">
+    <div class="about">
+
+      <h2>About Us</h2>
 
       <p>
         Next Play Supplements was founded by Erika and Matt, a husband-and-wife team
@@ -242,6 +265,7 @@
       </p>
 
     </div>
+
   </div>
 </section>
 
@@ -250,4 +274,4 @@
 </footer>
 
 </body>
-</html> 
+</html>
